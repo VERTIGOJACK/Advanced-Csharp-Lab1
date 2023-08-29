@@ -20,9 +20,9 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
 
         }
 
-        public Programmer(string Name, decimal Salary, bool NewHire) : base(Name, Salary)
+        public Programmer(string Name, decimal Salary, bool Inexperienced) : base(Name, Salary)
         {
-            this.NewHire = NewHire;
+            this.Inexperienced = Inexperienced;
         }
 
         private int SpecializationID;
