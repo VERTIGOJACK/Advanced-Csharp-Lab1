@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Advanced_Csharp_Lab1.Classes
 {
+    //class for quickly switching between combinations of text effects
     public static class ConsoleTheme
     {
         public static void standard()

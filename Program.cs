@@ -14,8 +14,19 @@ namespace Advanced_Csharp_Lab1
             //add options
             menu.addMenuOption(new MenuOption("Organization", () =>
             {
+                //declare new top level menu
+                Menu orgMenu = new Menu("Organization menu");
+
+                //add options
+                orgMenu.addMenuOption(new MenuOption("Departments", () =>
+                {
+                    Console.Clear();
+                    Console.WriteLine("departmenteeeeeeeeee");
+                }));
+
+                //do the things
                 Console.Clear();
-                Console.WriteLine("youve evntered the org menu ?");
+                orgMenu.show();
             }));
 
             menu.addMenuOption(new MenuOption("Departments", () =>
