@@ -22,7 +22,11 @@ namespace Advanced_Csharp_Lab1.Classes.Employee
         protected decimal BaseSalary { get; set; }
         // enum for 
         public ProgrammingLanguage ProgrammingLanguage { get; set; }
-
+        // name method
+        public string getFullName()
+        {
+            return FirstName+" "+LastName;
+        }
         //id methods
         public int GetId()
         {

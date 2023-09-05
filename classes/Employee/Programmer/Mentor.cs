@@ -10,8 +10,6 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
 {
     public class Mentor : Employee
     {
-
-
         //props
         private List<Beginner> AssignedBeginners;
 
@@ -39,29 +37,37 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
 
             return result;
         }
+
+        //manage beginners
         public void addBeginner(Beginner beginner)
         {
-            Beginner fromList = AssignedBeginners.SingleOrDefault(x => x.base.GetId() == beginner.base.GetId());
-            AssignedBeginners.Add(beginner);
+            if(AssignedBeginners.Contains(beginner) == false && 
+               beginner.ProgrammingLanguage.get() == this.ProgrammingLanguage.get())
+            {
+                AssignedBeginners.Add(beginner);
+            } 
+        }
+
+        public void removeBeginner(Beginner beginner)
+        {
+            if (AssignedBeginners.Contains(beginner) == true)
+            {
+                AssignedBeginners.Remove(beginner);
+            }
+        }
+
+        public override string ToString()
+        {
+            string result = base.ToString();
+            result += base.FirstName + " is a mentor to: ";
+            foreach(var beginner in AssignedBeginners) 
+            {
+                result += beginner.getFullName()+"\n"; 
+            }
+
 
         }
 
-        /*     public override string getReport()
-             {
-                 //declare result variable
-                 string report;
-                 //first the easy part, name and uid
-                 report = "Payroll ID: "+base.PayrollUID+"\n";
-                 report += "Name: " + base.Name + "\n";
-
-
-                 return report;
-             }
-
-             public override decimal getSalary()
-             {
-                 throw new NotImplementedException();
-             }*/
         // constructors
         public Mentor(string FirstName, string LastName) : base(FirstName, LastName)
         {
@@ -74,6 +80,11 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
         }
 
         public Mentor(string FirstName, string LastName, decimal Salary, Specialization ProgrammingLanguage) : base(FirstName, LastName, Salary, ProgrammingLanguage)
+        {
+            initVars();
+        }
+
+        private Mentor(Beginner beginner) : base(beginner)
         {
             initVars();
         }
