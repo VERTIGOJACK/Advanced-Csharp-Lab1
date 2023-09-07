@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Advanced_Csharp_Lab1.classes.Organization.Organization">
+    <Position X="6.25" Y="5.75" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AACBAAAIAAAACAAGBAAABAYAQAAAAAAQIAAAAAAgAAA=</HashCode>
+      <FileName>classes\Organization\Organization.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Mentor" />
+      <Property Name="Beginner" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Menu.MenuOption">
+    <Position X="11.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>classes\Menu\MenuOption.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Menu.Menu">
+    <Position X="9.5" Y="5.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACCEEAIAAAAAAAAAAAABBADIAAAgAAAQA=</HashCode>
+      <FileName>classes\Menu\Menu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="MenuOption" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Employee.Employee">
+    <Position X="2" Y="2.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AQAACEAAAAAAIAUEAAACIAAAAAgAAAAIAAAAAAIIAAg=</HashCode>
+      <FileName>classes\Employee\Employee.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ProgrammingLanguage1" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Employee.Programmer.Beginner">
+    <Position X="1" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAgAAAAEEAAACAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Employee\Programmer\Beginner.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Employee.Programmer.Mentor">
+    <Position X="3.5" Y="6.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYIAAAAAAEEAAACABAAAAAAAAAAAAIAACAAAAA=</HashCode>
+      <FileName>classes\Employee\Programmer\Mentor.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Advanced_Csharp_Lab1.Classes.Employee.Programmer.ProgrammingLanguage">
+    <Position X="5" Y="2.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAEAAQAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Employee\Programmer\ProgrammingLanguage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Advanced_Csharp_Lab1.Interfaces.IPerson" Collapsed="true">
+    <Position X="2" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAg=</HashCode>
+      <FileName>Interfaces\IPerson.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Delegate Name="Advanced_Csharp_Lab1.classes.Organization.SalaryCallback" Collapsed="true">
+    <Position X="6.25" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>classes\Organization\Organization.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

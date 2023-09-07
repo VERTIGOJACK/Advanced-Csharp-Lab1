@@ -4,16 +4,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Advanced_Csharp_Lab1.Enums;
-
+using Advanced_Csharp_Lab1.Exceptions;
 
 namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
 {
     public class Beginner : Employee
     {
 
+       
         //props
         private Mentor AssignedMentor;
 
+        public void AssignMentor(Mentor mentor)
+        {
+            try
+            {
+                if (mentor.ProgrammingLanguage.get() != this.ProgrammingLanguage.get())
+                {
+                    throw new OrganizationException("Programming language mismatch between Mentor and Beginner");
+                }
+                this.AssignedMentor = mentor;
+            }
+            catch(OrganizationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            
+        }
+
+        public Mentor getMentor()
+        {
+            return this.AssignedMentor;
+        }
 
         public override decimal GetSalary()
         {
@@ -30,24 +52,37 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
             }
 
             //multiply basesalary
-            result = calculatedMultiplier * base.BaseSalary;
+            result = (1+calculatedMultiplier) * base.BaseSalary;
 
             return result;
         }
 
+        public override string ToString()
+        {
+            string result = base.ToString();
+            
+            result += "\n";
+            result += base.FirstName + " ";
+
+            if (AssignedMentor != null)
+            {
+                result += "is mentored by: "+ AssignedMentor.GetFullName();
+            }
+            else
+            {
+                result += "Has no mentor assigned ";
+            }
+            return result;
+        }
 
         // constructors
-        public Beginner(string FirstName, string LastName) : base(FirstName, LastName)
-        {
-            initVars();
-        }
-
-        public Beginner(string FirstName, string LastName, decimal Salary) : base(FirstName, LastName, Salary)
-        {
-            initVars();
-        }
 
         public Beginner(string FirstName, string LastName, decimal Salary, Specialization ProgrammingLanguage) : base(FirstName, LastName, Salary, ProgrammingLanguage)
+        {
+            initVars();
+        }
+
+        private Beginner(Employee employee):base(employee)
         {
             initVars();
         }
@@ -56,7 +91,5 @@ namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
         {
             //nothing here this time
         }
-
-
     }
 }

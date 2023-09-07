@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Advanced_Csharp_Lab1.classes.Employee.Programmer
+namespace Advanced_Csharp_Lab1.Classes.Employee.Programmer
 {
     public class ProgrammingLanguage
     {

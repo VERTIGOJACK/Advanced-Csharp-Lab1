@@ -12,6 +12,7 @@ namespace Advanced_Csharp_Lab1.Classes.Menu
         private string Title;
         private List<MenuOption> Items;
         private int CurrentSelectionIndex = 0;
+        public string instructions;
 
         //constructor
         public Menu(string Title)
@@ -23,6 +24,14 @@ namespace Advanced_Csharp_Lab1.Classes.Menu
         {
             this.Items = Items;
             this.Title = Title;
+        }
+
+        public MenuOption MenuOption
+        {
+            get => default;
+            set
+            {
+            }
         }
 
         public void addMenuOption(MenuOption option)
@@ -46,24 +55,26 @@ namespace Advanced_Csharp_Lab1.Classes.Menu
                 //QoL
                 var item = Items[i];
 
-                //change selection color
-                if (i == CurrentSelectionIndex) {
-                    ConsoleTheme.selected();
-                }
-                else
-                {
-                    ConsoleTheme.standard();
-                }
-
                 //generate string
                 string result = (i + 1) + ". " + item.Name;
 
-                //writeline
-                Console.WriteLine(result);
+                //change selection color
+                if (i == CurrentSelectionIndex) {
+                    ConsoleTheme.highLight(() =>
+                    {
+                        Console.Write(result);
 
-                //the turn console colors back to normal
-                ConsoleTheme.standard();
+                    });
+                }
+                else
+                {
+                    Console.WriteLine(result);
+                }
+
             }
+
+            //then print instructions
+            Console.WriteLine(Environment.NewLine+instructions);
 
             //then wait for navigation
             navigate();

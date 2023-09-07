@@ -15,8 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="classes\Organization\" />
     <Folder Include="classes\Specialization\" />
+    <Folder Include="Documents\" />
   </ItemGroup>
 
 </Project>
